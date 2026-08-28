@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for the next TELICA Digital Concepts cohort.">
+  <meta property="og:title" content="Apply — TELICA Digital Concepts">
+  <meta property="og:description" content="Apply for the next TELICA Digital Concepts cohort.">
+  <meta property="og:type" content="website">
+  <title>Apply — TELICA Digital Concepts</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#application">Skip to application</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="TELICA Digital Concepts home">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span class="brand-name"><strong>TELICA</strong><span>DIGITAL CONCEPTS</span></span>
+      </a>
+      <a class="back-link" href="../index.html"><span aria-hidden="true">←</span> Back to TELICA</a>
+    </div>
+  </header>
+
+  <main id="application">
+    <section class="application-intro">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">TELICA DIGITAL CONCEPTS / APPLICATION</p>
+          <h1>Start your next chapter with a skill you can use.</h1>
+        </div>
+        <div class="intro-note">
+          <p>Tell us a little about yourself, what you want to learn and why you want to join the next cohort.</p>
+          <span>APPLICATION / 01—05</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="application-section">
+      <div class="container application-layout">
+        <aside class="progress-panel" aria-label="Application progress">
+          <div class="progress-heading"><span>YOUR APPLICATION</span><strong id="progress-count">01 / 05</strong></div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+
+          <ol class="steps">
+            <li class="step is-active" data-step-indicator="1"><span>01</span><div><strong>Personal Information</strong><small>Your basic details</small></div></li>
+            <li class="step" data-step-indicator="2"><span>02</span><div><strong>Choose Your Skill</strong><small>What you want to develop</small></div></li>
+            <li class="step" data-step-indicator="3"><span>03</span><div><strong>Experience</strong><small>Where you are today</small></div></li>
+            <li class="step" data-step-indicator="4"><span>04</span><div><strong>Motivation</strong><small>Why TELICA</small></div></li>
+            <li class="step" data-step-indicator="5"><span>05</span><div><strong>Review</strong><small>Check your application</small></div></li>
+          </ol>
+
+          <div class="progress-footer"><span>TAKES ABOUT 4–6 MINUTES</span><span>SECURE APPLICATION</span></div>
+        </aside>
+
+        <div class="form-panel">
+          <form id="application-form" novalidate>
+
+            <fieldset class="form-step is-active" data-step="1">
+              <legend>Let's start with the basics.</legend>
+              <p class="step-description">Tell us how we can reach you.</p>
+              <div class="field-grid">
+                <div class="field field-full">
+                  <label for="full-name">Full name <span>*</span></label>
+                  <input id="full-name" name="full_name" type="text" autocomplete="name" placeholder="Your full name" required>
+                  <small class="field-error" data-error-for="full_name"></small>
+                </div>
+                <div class="field">
+                  <label for="email">Email address <span>*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                  <small class="field-error" data-error-for="email"></small>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone / WhatsApp <span>*</span></label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 800 000 0000" required>
+                  <small class="field-error" data-error-for="phone"></small>
+                </div>
+                <div class="field field-full">
+                  <label for="location">Location <span>*</span></label>
+                  <input id="location" name="location" type="text" autocomplete="address-level2" placeholder="City / State / Country" required>
+                  <small class="field-error" data-error-for="location"></small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="2" hidden>
+              <legend>What do you want to develop?</legend>
+              <p class="step-description">Select the skill that best matches what you want to learn.</p>
+              <div class="choice-grid">
+                <label class="choice-card"><input type="radio" name="selected_skill" value="UI/UX Design" required><span class="choice-number">01</span><span class="choice-content"><strong>UI/UX Design</strong><small>Design thoughtful digital experiences.</small></span><span class="choice-check" aria-hidden="true">✓</span></label>
+                <label class="choice-card"><input type="radio" name="selected_skill" value="Graphic Design"><span class="choice-number">02</span><span class="choice-content"><strong>Graphic Design</strong><small>Develop professional visual communication skills.</small></span><span class="choice-check" aria-hidden="true">✓</span></label>
+                <label class="choice-card"><input type="radio" name="selected_skill" value="Product Design"><span class="choice-number">03</span><span class="choice-content"><strong>Product Design</strong><small>Learn how ideas become useful digital products.</small></span><span class="choice-check" aria-hidden="true">✓</span></label>
+                <label class="choice-card"><input type="radio" name="selected_skill" value="Social Media Marketing"><span class="choice-number">04</span><span class="choice-content"><strong>Social Media Marketing</strong><small>Understand how brands communicate and grow online.</small></span><span class="choice-check" aria-hidden="true">✓</span></label>
+                <label class="choice-card"><input type="radio" name="selected_skill" value="Brand Content Creation"><span class="choice-number">05</span><span class="choice-content"><strong>Brand Content Creation</strong><small>Create content that communicates a brand's identity.</small></span><span class="choice-check" aria-hidden="true">✓</span></label>
+              </div>
+              <small class="form-level-error" id="skill-error"></small>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="3" hidden>
+              <legend>Where are you in your journey?</legend>
+              <p class="step-description">There is no wrong starting point. Choose the option that describes you best.</p>
+              <div class="field-grid">
+                <div class="field field-full">
+                  <label>Current experience level <span>*</span></label>
+                  <div class="choice-list">
+                    <label class="radio-row"><input type="radio" name="experience_level" value="Complete beginner" required><span><strong>Complete beginner</strong><small>I am starting from the beginning.</small></span></label>
+                    <label class="radio-row"><input type="radio" name="experience_level" value="Beginner with some exposure"><span><strong>Beginner with some exposure</strong><small>I have explored the skill but need structure and practice.</small></span></label>
+                    <label class="radio-row"><input type="radio" name="experience_level" value="Intermediate"><span><strong>Intermediate</strong><small>I have experience and want to improve my competence.</small></span></label>
+                  </div>
+                  <small class="field-error" data-error-for="experience_level"></small>
+                </div>
+                <div class="field">
+                  <label for="occupation">Current occupation / status <span>*</span></label>
+                  <input id="occupation" name="occupation" type="text" placeholder="Student, freelancer, employed, etc." required>
+                  <small class="field-error" data-error-for="occupation"></small>
+                </div>
+                <div class="field">
+                  <label for="previous-exposure">Previous exposure to this skill</label>
+                  <input id="previous-exposure" name="previous_exposure" type="text" placeholder="Optional">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="4" hidden>
+              <legend>What brings you here?</legend>
+              <p class="step-description">Your answer helps TELICA understand what you hope to get from the experience.</p>
+              <div class="field-grid">
+                <div class="field field-full">
+                  <label for="motivation">Why do you want to join the TELICA cohort? <span>*</span></label>
+                  <textarea id="motivation" name="motivation" rows="7" maxlength="1200" placeholder="Tell us what you hope to learn, build or achieve..." required></textarea>
+                  <div class="textarea-meta"><small class="field-error" data-error-for="motivation"></small><small><span id="character-count">0</span> / 1200</small></div>
+                </div>
+                <div class="field">
+                  <label for="availability">Can you commit to the cohort schedule? <span>*</span></label>
+                  <select id="availability" name="availability" required>
+                    <option value="">Select an option</option><option value="Yes">Yes</option><option value="Mostly">Mostly</option><option value="I need more information">I need more information</option>
+                  </select>
+                  <small class="field-error" data-error-for="availability"></small>
+                </div>
+                <div class="field">
+                  <label for="referral-source">How did you hear about TELICA?</label>
+                  <select id="referral-source" name="referral_source">
+                    <option value="">Select an option</option><option value="Instagram">Instagram</option><option value="Friend or colleague">Friend or colleague</option><option value="Community">Community</option><option value="Search">Search</option><option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="5" hidden>
+              <legend>Review your application.</legend>
+              <p class="step-description">Make sure everything is correct before submitting.</p>
+              <div class="review-list" id="review-list"></div>
+              <div class="review-notice"><span aria-hidden="true">!</span><p>Submitting an application does not necessarily mean automatic admission. TELICA will contact you using the details you provide.</p></div>
+            </fieldset>
+
+            <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
+            <div class="form-actions">
+              <button class="button button-back" type="button" id="back-button" hidden><span aria-hidden="true">←</span> Back</button>
+              <button class="button button-next" type="button" id="next-button">Continue <span aria-hidden="true">→</span></button>
+              <button class="button button-submit" type="submit" id="submit-button" hidden>Submit Application <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
+          <div class="success-screen" id="success-screen" hidden aria-live="polite">
+            <div class="success-mark" aria-hidden="true">✓</div>
+            <p class="eyebrow">APPLICATION RECEIVED</p>
+            <h2>You're in the process.</h2>
+            <p>Your TELICA cohort application has been received successfully. We will contact you using the details you provided.</p>
+            <div class="reference-box"><span>APPLICATION REFERENCE</span><strong id="reference-number">TELICA-000000</strong></div>
+            <div class="success-next"><strong>What happens next?</strong><p>Keep an eye on your email and phone for further communication from TELICA. Application submission does not necessarily mean automatic admission.</p></div>
+            <a class="button button-primary" href="../index.html">Return Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="brand brand-footer"><span class="brand-mark" aria-hidden="true">T</span><span class="brand-name"><strong>TELICA</strong><span>DIGITAL CONCEPTS</span></span></div>
+      <span>© <span data-year></span> TELICA Digital Concepts</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
