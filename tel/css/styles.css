@@ -106,7 +106,7 @@ img {
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease;
-  /* max-height: ; */
+  margin-top: -30px;
 }
 
 .site-header.is-scrolled {

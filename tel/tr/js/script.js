@@ -185,34 +185,169 @@ nextButton.addEventListener("click", () => {
 
 backButton.addEventListener("click", () => showStep(Math.max(currentStep - 1, 1)));
 
-form.addEventListener("submit", async event => {
-  event.preventDefault();
-  if (!validateStep(4)) { showStep(4); return; }
+// const form = document.querySelector("#application-form");
+// const submitButton = document.querySelector("#submit-button");
 
-  buildReview();
-  submitButton.disabled = true;
-  submitButton.textContent = "Submitting...";
-  formError.textContent = "";
+// const successScreen = document.querySelector("#success-screen");
+// const referenceNumber = document.querySelector("#reference-number");
+// const formError = document.querySelector("#form-error");
 
-  /*
-    BACKEND INTEGRATION POINT:
-    Replace this simulated request with the real POST /api/applications call.
-    The backend should validate/sanitize data, prevent duplicate applications,
-    create the unique application ID and return it.
-  */
-  try {
-    await new Promise(resolve => setTimeout(resolve, 900));
-    referenceNumber.textContent = createReferenceNumber();
-    form.hidden = true;
-    successScreen.hidden = false;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    console.log("Application payload ready for backend:", applicationPayload());
-  } catch {
-    formError.textContent = "We could not submit your application. Please check your connection and try again.";
-  } finally {
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Submit Application <span aria-hidden="true">→</span>';
-  }
+const WEB3FORMS_ENDPOINT =
+    "https://api.web3forms.com/submit";
+
+
+form.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    formError.textContent = "";
+
+
+    /*
+     * Generate the application reference BEFORE
+     * sending the application.
+     */
+    const applicationReference =
+        "TELICA-" +
+        new Date()
+            .toISOString()
+            .slice(0, 10)
+            .replace(/-/g, "") +
+        "-" +
+        Math.random()
+            .toString(36)
+            .substring(2, 8)
+            .toUpperCase();
+
+
+    /*
+     * Collect the application fields.
+     */
+    const formData = new FormData(form);
+
+
+    /*
+     * Add the reference number to the email.
+     */
+    formData.append(
+        "application_reference",
+        applicationReference
+    );
+
+
+    /*
+     * Email subject.
+     */
+    formData.append(
+        "subject",
+        `New TELICA Cohort Application — ${applicationReference}`
+    );
+
+
+    /*
+     * AJAX submission.
+     */
+    formData.append("ajax", "true");
+
+
+    try {
+
+        const response = await fetch(
+            WEB3FORMS_ENDPOINT,
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+
+        const result =
+            await response.json();
+
+
+        /*
+         * SUCCESS
+         */
+        if (
+            response.ok &&
+            result.success
+        ) {
+
+            /*
+             * Show the same reference number
+             * that was sent to the admin.
+             */
+            if (referenceNumber) {
+
+                referenceNumber.textContent =
+                    applicationReference;
+
+            }
+
+
+            /*
+             * Hide application form.
+             */
+            form.hidden = true;
+
+
+            /*
+             * Show success screen.
+             */
+            successScreen.hidden = false;
+
+
+            /*
+             * Scroll to success message.
+             */
+            successScreen.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+
+            return;
+        }
+
+
+        /*
+         * Web3Forms rejected the submission.
+         */
+        throw new Error(
+            result.message ||
+            "Your application could not be submitted."
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "TELICA application submission error:",
+            error
+        );
+
+
+        /*
+         * Show error message.
+         */
+        formError.textContent =
+            error.message ||
+            "Something went wrong. Please try again.";
+
+
+        /*
+         * Allow the applicant to try again.
+         */
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Submit Application";
+
+    }
+
 });
 
 motivation.addEventListener("input", () => {
