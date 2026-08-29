@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 body {
@@ -269,7 +270,7 @@ img {
   align-items: center;
   overflow: hidden;
   background: var(--paper);
-  margin-top: -40px;
+  margin-top: -25px;
 }
 
 .hero::before {
@@ -1092,6 +1093,7 @@ img {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
+
 }
 
 .why-telica .kicker-line {
@@ -1571,6 +1573,20 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .why-telica .section-kicker {
+    margin-left: 15px;
+  }
+  
+.section-intro-grid h2 {
+  margin-left: 15px;
+}
+
+.section-intro-copy {
+  margin-left: 15px;
+  /* margin-right: 5px; */
+  box-sizing: border-box;
+}
+
   .testimonials .testimonial-grid {
     grid-template-columns: 1fr;
   }
@@ -1598,6 +1614,20 @@ img {
   .why-telica {
     padding: 75px 0;
   }
+
+  .why-telica .section-kicker {
+    margin-left: 15px;
+  }
+  
+.section-intro-grid h2 {
+  margin-left: 15px;
+}
+
+.section-intro-copy {
+  margin-left: 15px;
+  margin-right: 5px;
+  box-sizing: border-box;
+}
 
   .why-telica .section-heading {
     margin-bottom: 45px;
@@ -1639,11 +1669,16 @@ img {
     padding: 22px 0;
     font-size: 15px;
   }
-
-.faq-layout {
-  display: flex;
-  flex-direction: column;
+.faq .section-shell {
+  margin-left: 20px;
+    justify-self:center;
 }
+
+  .faq-layout {
+    display: flex;
+    flex-direction: column;
+    
+  }
 
   .faq-list {
     width: 100vw;
@@ -1655,7 +1690,6 @@ img {
   }
 
   .faq-item {
-
     display: flex;
     flex-direction: column;
   }
