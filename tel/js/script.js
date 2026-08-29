@@ -72,3 +72,74 @@ if ("IntersectionObserver" in window) {
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+/* =========================================================
+   TELICA FAQ ACCORDION
+========================================================= */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+
+faqItems.forEach((item) => {
+
+    const question =
+        item.querySelector(".faq-question");
+
+
+    if (!question) {
+        return;
+    }
+
+
+    question.addEventListener("click", () => {
+
+        const currentlyOpen =
+            item.classList.contains("is-open");
+
+
+        /*
+         * Close all other FAQ items.
+         */
+
+        faqItems.forEach((otherItem) => {
+
+            if (otherItem !== item) {
+
+                otherItem.classList.remove(
+                    "is-open"
+                );
+
+                const otherQuestion =
+                    otherItem.querySelector(
+                        ".faq-question"
+                    );
+
+
+                otherQuestion?.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+        /*
+         * Toggle current FAQ item.
+         */
+
+        item.classList.toggle(
+            "is-open",
+            !currentlyOpen
+        );
+
+
+        question.setAttribute(
+            "aria-expanded",
+            String(!currentlyOpen)
+        );
+
+    });
+
+});
