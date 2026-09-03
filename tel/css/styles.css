@@ -53,9 +53,7 @@ body.menu-open {
 
 h1,h2{
   font-family: "Unbounded";
-  /* font-style:italic; */
   font-weight: 100 !important;
-  letter-spacing: -7px
 }
 
 a {
@@ -1345,6 +1343,7 @@ img {
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  overflow-x: hidden;
 }
 
 .section-shell {
@@ -1582,6 +1581,17 @@ img {
   .why-telica .why-grid {
     grid-template-columns: 1fr;
   }
+  h1,h2{
+  font-family: "Unbounded";
+  /* font-style:italic; */
+  font-weight: 100 !important;
+  letter-spacing: -2px
+}
+
+.hero {
+  overflow-x: hidden;
+  margin-right: 10px;
+}
 
   .why-telica .section-kicker {
     margin-left: 15px;
